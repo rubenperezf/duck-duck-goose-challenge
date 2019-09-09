@@ -1,0 +1,77 @@
+<!<!DOCTYPE html>
+<html>
+  <head>
+    <title?Duck-Duck-Goose Challenge</title>
+    <meta name='author' content='Ruben Perez'>
+    <meta name='description' content='Game duck duck goose'>
+    <meta name='keywords' content='javascript, game, duck-duck-goose'>
+    <meta charset="utf-8">
+    <link href='style.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Duck-Duck-Goose Challenge</h1>
+    </header>
+
+    <section class='instruction'>
+      <h2>Instrucction:</h2>
+        <ul>
+          <li>Using JavaScript, create an array of 100 numbers, starting with 1 ending with 100.</li>
+          <li>Replace every number that is divisible by 3 with Duck</li>
+          <li>Replace every number this is divisible by 5 with Goose</li>
+          <li>Replace every number that is both divisible by 3 and 5 with DuckGoose</li>
+          <li>HINT: using the ‘modulus’ operator you can determine what a number is divisible</li>
+        </ul>
+
+    </section>
+
+    <section>
+      <p>Click the button to trigger a function that will output array results to a p element with id="demo". It will also output using alert, and provided write function.</p>
+      <div class='btn'>
+        <button onclick="myFunction()">Click me</button>
+      </div>
+      <p id="demo"></p>
+      <script>
+
+var a = [];  
+
+function myFunction() {
+
+for (var n=1; n<=100; n++){
+  if (n % 15 === 0)
+    a[n-1] = "DuckGoose";
+  else if(n % 5 === 0)
+    a[n-1] = "Goose";
+  else if(n % 3 === 0)
+    a[n-1] = "Duck";
+  else
+    a[n-1] = n;
+}
+
+g(a);
+write(a);
+
+}
+
+function g(a) {
+var str = "";
+for (var n=1; n<=100; n++){
+  str = str + a[n-1] + '\r';
+}
+window.alert(str);
+document.getElementById("demo").innerHTML = (str);
+}
+
+function write (o) {
+  var el = document.createElement('pre');
+  el.innerHTML = JSON.stringify(o, undefined, 2);
+  document.body.appendChild(el);
+}
+
+      </script>
+
+    </section>
+
+  </body>
+</html>
